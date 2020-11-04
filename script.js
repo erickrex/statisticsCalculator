@@ -28,3 +28,29 @@ function statBasics(...numbers){
     getMedian(...numbers);
 }
 statBasics(10, 10, 40 );
+
+function binomialDistribution(trials, probability){
+    
+    if (probability < 0 || probability > 1 || trials <= 0 || trials % 1 !== 0) {
+        return undefined;
+    }
+
+    let x = 0;
+    let cumulativeProbability = 0;
+    const distribution = [];
+    let binomialCoefficient = 1;
+    while (cumulativeProbability);
+    {
+       
+        cells[x] =
+            binomialCoefficient *
+            Math.pow(probability, x) *
+            Math.pow(1 - probability, trials - x);
+        cumulativeProbability += distribution[x];
+        x++;
+        binomialCoefficient = (binomialCoefficient * (trials - x + 1)) / x;
+      
+    } 
+
+    return distribution;
+}
