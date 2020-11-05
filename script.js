@@ -29,6 +29,13 @@ function statBasics(...numbers){
 }
 statBasics(10, 10, 40 );
 
+function guessBall(blueStart, redStart, blueTaken, redTaken){
+    let blueTotal = blueStart - blueTaken;
+    let redTotal = redStart - redTaken;
+    return blueTotal / (blueTotal + redTotal);
+}
+
+
 function binomialDistribution(trials, probability){
     
     if (probability < 0 || probability > 1 || trials <= 0 || trials % 1 !== 0) {
