@@ -61,3 +61,39 @@ function binomialDistribution(trials, probability){
 
     return distribution;
 }
+
+//Date calculators
+
+
+function getNextDay(day) {
+    let nextDay = new Date(day)
+    nextDay.setDate(day.getDate() + 1)
+    return nextDay
+}
+
+function buildMonth(day) {
+    let daysInMonth = getDaysInMonth(day.getMonth() + 1, day.getFullYear())
+    let iterableDay = new Date(day)
+    iterableDay.setDate(1)
+    let month = [...Array(daysInMonth)].map((_, i) => {
+        let monthDay = {
+            index: i,
+            date: iterableDay,
+            expenses: []
+        }
+        iterableDay = getNextDay(iterableDay)
+        return monthDay
+    })
+    return month
+}
+
+function getDaysInMonth(month, year) {
+    return new Date(year, month, 0).getDate()
+}
+
+function displayMonth(month) {
+    let monthHtml = month.reduce(function(accumulator, day) {
+        return accumulator + `<div class="day">${day.date.getDate()}</div>`    
+    }, '')
+    document.getElementById('MonthlyExpenses').innerHTML = monthHtml
+}
