@@ -97,3 +97,26 @@ function displayMonth(month) {
     }, '')
     document.getElementById('MonthlyExpenses').innerHTML = monthHtml
 }
+
+
+function combinations(x, y) {
+    let i;
+    let subI;
+    const combinationList = [];
+    let subsetCombinations;
+    let iterator;
+
+    for (i = 0; i < x.length; i++) {
+        if (y === 1) {
+            combinationList.push([x[i]]);
+        } else {
+            //recursive
+            subsetCombinations = combinations(x.slice(i + 1, x.length), y - 1);
+                    for (subI = 0; subI < subsetCombinations.length; subI++) {
+                     //figure out how to return
+                        iterator
+                   }
+        }
+    }
+    return combinationList;
+}
