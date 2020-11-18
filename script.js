@@ -128,3 +128,27 @@ function factorial(x) {
   return x * factorial(x-1);
 }
 //console.log(factorial(5));
+
+function variance(array){
+if (x.length < 2) {
+        throw new Error("sampleVariance requires at least two data points");
+    }
+
+    const deviation = squares(x, 2);
+
+    const divideBy = x.length - 1;
+
+    return deviation / divideBy;
+
+const squares = function sumOfSquares(x, n) {
+    const meanValue = mean(x);
+    let sum = 0;
+    let tempValue;
+    let i;
+    for (i = 0; i < x.length; i++) {
+            sum += Math.pow(x[i] - meanValue, n);
+        }
+    }
+    return sum;
+}
+}
